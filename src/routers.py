@@ -21,5 +21,6 @@ urlpatterns = [
     re_path('swagger(?P<format>\.json|\.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('', include('src.profiles.urls'))
+    path('wall/', include('src.wall.urls')),
+    path('', include('src.profiles.urls')),
 ]
