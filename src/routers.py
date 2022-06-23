@@ -22,5 +22,6 @@ urlpatterns = [
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('wall/', include('src.wall.urls')),
+    path('follower/', include('src.followers.urls')),
     path('', include('src.profiles.urls')),
 ]
