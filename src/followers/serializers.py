@@ -10,6 +10,6 @@ class ListFollowerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Follower
-        fields = ('subscriber')
+        fields = ('subscriber',)
 
 
