@@ -5,6 +5,8 @@ from .models import UserNet
 class GetUserNetSerializer(serializers.ModelSerializer):
     """Output info about user"""
 
+    avatar = serializers.ImageField(read_only=True)
+
     class Meta:
         model = UserNet
         exclude = (
@@ -34,3 +36,13 @@ class GetUserNetPublicSerializer(serializers.ModelSerializer):
             "groups",
             "phone",
         )
+
+
+class UserByFollowerSerializer(serializers.ModelSerializer):
+    """Serializer for followers"""
+
+    avatar = serializers.ImageField(read_only=True)
+
+    class Meta:
+        model = UserNet
+        fields = ('id', 'username', 'avatar')
