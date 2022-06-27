@@ -6,4 +6,4 @@ class Follower(models.Model):
     """Follower model"""
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE, related_name='owner')
-    subscriber = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE, related_query_name='followers')
+    subscriber = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE, related_query_name='subscribers')
